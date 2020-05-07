@@ -1,0 +1,7 @@
+name: OnePlayerSleep
+version: 1.15-001
+main: stream.azakt.oneplayersleep.OnePlayerSleep
+api-version: 1.13
+authors: [Azakt]
+description: Allows one player to sleep to pass the night.
+website: azakt.stream
