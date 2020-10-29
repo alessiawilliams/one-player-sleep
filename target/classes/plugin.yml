@@ -1,5 +1,5 @@
 name: OnePlayerSleep
-version: 1.15-001
+version: 1.16-001
 main: stream.azakt.oneplayersleep.OnePlayerSleep
 api-version: 1.13
 authors: [Azakt]

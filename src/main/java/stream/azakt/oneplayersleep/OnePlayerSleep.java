@@ -1,6 +1,7 @@
 package stream.azakt.oneplayersleep;
 
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
@@ -21,10 +22,15 @@ public final class OnePlayerSleep extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerEnterBed(PlayerBedEnterEvent e) {
-        if(!e.getBed().getWorld().isDayTime()) {
+        World w = e.getBed().getWorld();
+        if(!w.isDayTime() && w.getEnvironment() == World.Environment.NORMAL) {
             getLogger().info(String.format("=> Player (%s) detected as sleeping. Skipping night.", e.getPlayer().getDisplayName()));
-            e.getBed().getWorld().setTime(0);
+            w.setTime(0);
             Bukkit.broadcastMessage(String.format("%s slept through the night!", e.getPlayer().getDisplayName()));
+            if(w.hasStorm() || w.isThundering()) {
+                w.setStorm(false);
+                w.setThundering(false);
+            }
         }
     }
 }

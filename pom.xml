@@ -6,7 +6,7 @@
 
     <groupId>stream.azakt</groupId>
     <artifactId>one-player-sleep</artifactId>
-    <version>1.15-001</version>
+    <version>1.16-001</version>
     <packaging>jar</packaging>
 
     <name>One Player Sleep</name>
